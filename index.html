@@ -80,11 +80,37 @@
       background-color: #ddd;
       color: #333;
       text-decoration: none;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
     }
 
     .login-button:hover {
       background-color: #666;
       color: #fff;
+    }
+
+    .horizontal-list {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .horizontal-list li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .horizontal-list h2,
+    .horizontal-list a {
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .horizontal-list h2:hover,
+    .horizontal-list a:hover {
+      color: #666;
     }
   </style>
 </head>
@@ -112,8 +138,12 @@
     <p>Get in touch with us for support, feedback, or collaboration opportunities.</p>
     <h2>Help</h2>
     <p>Find resources and tutorials to help you navigate our digital art sales platform.</p>
-    <h2>Login / Create Account</h2>
-    <a class="login-button" href="#">Login / Create Account</a>
   </div>
+  <ul class="horizontal-list">
+    <li><a href="#">Login / Create Account</a></li>
+    <li><h2>About Us</h2></li>
+    <li><h2>Contact Us</h2></li>
+    <li><h2>Help</h2></li>
+  </ul>
 </body>
 </html>
