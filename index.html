@@ -1,149 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Art Sales | AI Evolutions HQ</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Digital Art Store</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-    .banner {
-      width: 100%;
-      height: 250px;
-      background-color: #eee;
-      text-align: center;
-      position: relative;
-    }
+  /* Header: Login on the right */
+  header {
+    display: flex;
+    justify-content: flex-end; /* aligns to right */
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+  }
 
-    .banner h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 36px;
-      font-weight: bold;
-      color: #333;
-    }
+  /* Main content area */
+  main {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* optional, for centering headings/content */
+  }
 
-    .sidebar {
-      float: left;
-      width: 20%;
-      padding: 20px;
-      background-color: #ddd;
-    }
+  /* Footer: centered links at bottom */
+  footer {
+    display: flex;
+    justify-content: center; /* options: 'center' or 'flex-start' for left */
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
 
-    .content {
-      float: right;
-      width: 80%;
-      padding: 20px;
-      background-color: #f9f9f9; /* Updated to a soft, mellow grey */
-    }
+  /* To place footer items at bottom left instead, comment above and uncomment below: */
+  /* footer {
+    justify-content: flex-start;
+    padding: 20px;
+  } */
 
-    h1 {
-      font-size: 36px;
-      margin-top: 0;
-    }
-
-    p, li {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 30px auto;
-      max-width: 700px;
-    }
-
-    a {
-      font-weight: bold;
-      color: #333;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #666;
-    }
-
-    .store-section {
-      margin-top: 50px;
-    }
-
-    .login-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ddd;
-      color: #333;
-      text-decoration: none;
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .login-button:hover {
-      background-color: #666;
-      color: #fff;
-    }
-
-    .horizontal-list {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .horizontal-list li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    .horizontal-list h2,
-    .horizontal-list a {
-      font-weight: bold;
-      color: #333;
-      text-decoration: none;
-    }
-
-    .horizontal-list h2:hover,
-    .horizontal-list a:hover {
-      color: #666;
-    }
-  </style>
+  /* Style for footer links */
+  footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+  }
+</style>
 </head>
 <body>
-  <div class="banner">
-    <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
-  </div>
-  <div class="sidebar">
-    <ul>
+
+<header>
+  <a href="#">Login / Create Account</a>
+</header>
+
+<main>
+  <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
+  <nav>
+    <ul style="list-style: none; padding: 0;">
       <li><a href="#">Digital Paintings</a></li>
       <li><a href="#">Abstract Art</a></li>
       <li><a href="#">Illustrations</a></li>
       <li><a href="#">AI Images</a></li>
       <li><a href="#">AI Videos</a></li>
     </ul>
-  </div>
-  <div class="content">
-    <p>Here you can browse and purchase digital art pieces from various categories:</p>
-    <p>To make a purchase, click on the desired category and follow the instructions provided.</p>
-    <h2 class="store-section">Store</h2>
-    <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
-    <h2>About Us</h2>
-    <p>Learn more about our company and mission.</p>
-    <h2>Contact Us</h2>
-    <p>Get in touch with us for support, feedback, or collaboration opportunities.</p>
-    <h2>Help</h2>
-    <p>Find resources and tutorials to help you navigate our digital art sales platform.</p>
-  </div>
-  <ul class="horizontal-list">
-    <li><a href="#">Login / Create Account</a></li>
-    <li><h2>About Us</h2></li>
-    <li><h2>Contact Us</h2></li>
-    <li><h2>Help</h2></li>
-  </ul>
+  </nav>
+  <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+</main>
+
+<!-- Centered footer -->
+<footer>
+  <a href="#">About Us</a>
+  <a href="#">Contact Us</a>
+  <a href="#">Help</a>
+</footer>
+
+<!-- To place footer at bottom left, swap the footer CSS:
+<footer style="justify-content: flex-start;">
+  <a href="#">About Us</a>
+  <a href="#">Contact Us</a>
+  <a href="#">Help</a>
+</footer>
+-->
+
 </body>
 </html>
