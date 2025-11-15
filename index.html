@@ -1,8 +1,3 @@
-Certainly! I'll ensure that the **"Login / Create Account"** link and the **"Categories"** title are properly aligned side by side at the top, with consistent vertical alignment. I'll also provide the full code for clarity.
-
-Here's the corrected full code with proper alignment:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,95 +17,81 @@ Here's the corrected full code with proper alignment:
     background-repeat: no-repeat;
   }
 
-  /* Top section with login link and welcome message */
+  /* Top section (transparent overlay) */
   .top-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: rgba(240, 240, 240, 0.8);
+    background: none;
     z-index: 2;
   }
 
-  /* Container for the left and right parts inside top section */
-  .top-left, .top-right {
+  .top-left {
     display: flex;
     align-items: center;
-  }
-
-  /* Styling for the login/create account link */
-  .signin-link {
-    font-size: 1em;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-
-  /* Styling for the welcome message box (optional) */
-  .welcome-message {
     max-width: 70%;
   }
 
-  .welcome-message h2 {
-    margin: 0 0 8px 0;
-    font-size: 1.3em;
-    color: #333;
+  .welcome-message {
+    margin-right: 20px;
   }
 
-  .welcome-message p {
-    margin: 0;
-    font-size: 0.95em;
-    color: #555;
+  .welcome-message h2, .welcome-message p, .signin-link {
+    color: #fff;
   }
 
-  /* Container to hold sidebar and main content */
+  /* Container for sidebar and main content */
   .container {
     display: flex;
     flex: 1;
     min-height: 0;
   }
 
-  /* Sidebar styles */
+  /* Left panel: only as wide as the list items, centered "Categories" above */
   aside {
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center the title and list horizontally */
+    padding: 10px;
+    background: none;
   }
 
-  /* Shorter title bar at the top of sidebar */
-  .title-bar {
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 6px 10px;
-    border-radius: 3px;
+  /* "Categories" title centered above list, with full width to align center */
+  .category-title {
     font-weight: bold;
+    color: #fff;
     text-align: center;
-    font-size: 1em;
     margin-bottom: 8px;
   }
 
-  /* Sidebar categories list */
-  nav ul {
+  /* The box around the list (optional border for visual) */
+  .list-box {
+    display: inline-block; /* shrink to fit content width */
+  }
+
+  /* List inside the box, left-aligned */
+  .categories-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left; /* left align items */
   }
 
-  nav li {
-    margin: 8px 0;
+  .categories-nav li {
+    margin: 6px 0;
   }
 
-  nav a {
+  .categories-nav a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
   }
 
-  /* Main content styles */
-main {
+  /* Main content area (transparent overlay) */
+  main {
     flex: 1;
     padding: 20px;
-    background-color: rgba(255,255,255,0.2);
+    background: none;
     color: #fff;
     display: flex;
     align-items: center;
@@ -118,10 +99,10 @@ main {
     min-height: 300px;
   }
 
-  /* Footer styles */
-footer {
+  /* Footer (transparent overlay) */
+  footer {
     padding: 15px 20px;
-    background-color: rgba(240, 240, 240, 0.8);
+    background: none;
     display: flex;
     justify-content: center;
   }
@@ -129,13 +110,13 @@ footer {
   footer a {
     margin: 0 15px;
     text-decoration: none;
-    color: #333;
+    color: #fff;
   }
 </style>
 </head>
 <body>
 
-<!-- Top section with login link and welcome message -->
+<!-- Top section -->
 <div class="top-section">
   <div class="top-left">
     <div class="welcome-message">
@@ -148,25 +129,26 @@ footer {
   </div>
 </div>
 
-<!-- Main container with sidebar and content -->
+<!-- Main layout -->
 <div class="container">
-  <!-- Sidebar -->
+  <!-- Left box with centered title and list -->
   <aside>
-    <div class="title-bar">Categories</div>
-    <nav>
-      <ul>
-        <li><a href="#">Digital Paintings</a></li>
-        <li><a href="#">Abstract Art</a></li>
-        <li><a href="#">Illustrations</a></li>
-        <li><a href="#">AI Images</a></li>
-        <li><a href="#">AI Videos</a></li>
-      </ul>
-    </nav>
+    <div class="category-title">Categories</div>
+    <div class="list-box">
+      <nav class="categories-nav" aria-label="Categories list">
+        <ul>
+          <li><a href="#">Digital Paintings</a></li>
+          <li><a href="#">Abstract Art</a></li>
+          <li><a href="#">Illustrations</a></li>
+          <li><a href="#">AI Images</a></li>
+          <li><a href="#">AI Videos</a></li>
+        </ul>
+      </nav>
+    </div>
   </aside>
-
   <!-- Main content -->
   <main>
-    <!-- Content area left blank for your content -->
+    <!-- Content area -->
   </main>
 </div>
 
@@ -179,13 +161,3 @@ footer {
 
 </body>
 </html>
-```
-
----
-
-### What was changed:
-- The top section now has two containers: `.top-left` (with the welcome message) and `.top-right` (with the login link).
-- They are aligned horizontally with `flex` and aligned vertically with `align-items: center`.
-- This ensures the **"Login / Create Account"** link and the **welcome message** are on the same line, properly aligned.
-
-Feel free to tweak the spacing or styling further!
