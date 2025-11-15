@@ -1,3 +1,8 @@
+Certainly! I'll ensure that the **"Login / Create Account"** link and the **"Categories"** title are properly aligned side by side at the top, with consistent vertical alignment. I'll also provide the full code for clarity.
+
+Here's the corrected full code with proper alignment:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,7 @@
     background-repeat: no-repeat;
   }
 
-  /* Top section containing welcome message and login link */
+  /* Top section with login link and welcome message */
   .top-section {
     display: flex;
     justify-content: space-between;
@@ -27,7 +32,21 @@
     z-index: 2;
   }
 
-  /* Welcome message styles */
+  /* Container for the left and right parts inside top section */
+  .top-left, .top-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Styling for the login/create account link */
+  .signin-link {
+    font-size: 1em;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  /* Styling for the welcome message box (optional) */
   .welcome-message {
     max-width: 70%;
   }
@@ -42,14 +61,6 @@
     margin: 0;
     font-size: 0.95em;
     color: #555;
-  }
-
-  /* Sign in / sign up link styles */
-  .signin-link {
-    font-size: 1em;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
   }
 
   /* Container to hold sidebar and main content */
@@ -124,13 +135,17 @@ footer {
 </head>
 <body>
 
-<!-- Top section with welcome message and login link -->
+<!-- Top section with login link and welcome message -->
 <div class="top-section">
-  <div class="welcome-message">
-    <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
-    <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+  <div class="top-left">
+    <div class="welcome-message">
+      <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
+      <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+    </div>
   </div>
-  <a class="signin-link" href="#">Login / Create Account</a>
+  <div class="top-right">
+    <a class="signin-link" href="#">Login / Create Account</a>
+  </div>
 </div>
 
 <!-- Main container with sidebar and content -->
@@ -164,3 +179,13 @@ footer {
 
 </body>
 </html>
+```
+
+---
+
+### What was changed:
+- The top section now has two containers: `.top-left` (with the welcome message) and `.top-right` (with the login link).
+- They are aligned horizontally with `flex` and aligned vertically with `align-items: center`.
+- This ensures the **"Login / Create Account"** link and the **welcome message** are on the same line, properly aligned.
+
+Feel free to tweak the spacing or styling further!
