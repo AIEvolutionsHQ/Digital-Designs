@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Layout with Centered Welcome and Sidebar</title>
+<title>Centered Title with Left Image and Font</title>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Dancing Script', cursive;
     height: 200vh;
     background-image: url('https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/a-realistic-desktop-computer-with-all-internal-hardwa.jpg');
     background-size: cover;
@@ -18,33 +18,52 @@
     background-attachment: fixed;
   }
 
-  /* Top bar with centered welcome message and sign-in links to the right */
+  /* Top bar with centered title, image on left, links on right */
   .top-section {
     position: fixed;
     top: 0;
     width: 100%;
     height: 60px; /* fixed height */
     display: flex;
-    justify-content: space-between; /* space between welcome and sign-in */
-    align-items: center; /* vertically center items */
+    justify-content: space-between; /* space between left and right sections */
+    align-items: center;
     padding: 0 20px;
     background:#fff;
     z-index: 999;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
-  .welcome-message {
-    flex: 1;
+  /* Left section: image */
+  .top-left {
     display: flex;
-    justify-content: center; /* center the welcome message horizontally */
+    align-items: center;
   }
 
-  .welcome-message h2 {
+  .top-left img {
+    height: 40px;
+    /* no margin, at the very left edge (with padding) */
+  }
+
+  /* Centered title container with font style applied */
+  .title-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Title text styling */
+  .title-container h2 {
     margin: 0;
-    font-family:'Dancing Script', cursive;
-    font-size:1.2em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
   }
 
+  /* Sign-in links on the right */
   .sign-in-container {
     display: flex;
     align-items: center;
@@ -67,13 +86,13 @@
     width: 100%; height: 100%; object-fit: cover;
   }
 
-  /* Sidebar fixed just below the top bar */
+  /* Sidebar below top bar */
   .sidebar {
     position: fixed;
     top: 60px; /* start below top bar */
     left: 0;
     width: 180px;
-    height: calc(100% - 60px); /* fill remaining height */
+    height: calc(100% - 60px);
     background-color: #fff; border-right: 2px solid #333;
     padding: 10px; box-sizing: border-box;
     overflow-y: auto;
@@ -117,9 +136,15 @@
 
 <!-- Top bar -->
 <div class="top-section">
-  <div class="welcome-message">
+  <!-- Left: logo/image -->
+  <div class="top-left">
+    <img src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/ComfyUI_00038_.png" alt="ComfyUI Logo" />
+  </div>
+  <!-- Center: title -->
+  <div class="title-container">
     <h2>Welcome to Ai Evolutions HQ</h2>
   </div>
+  <!-- Right: sign-in links -->
   <div class="sign-in-container">
     <a href="#">Login</a>
     <a href="#">Create Account</a>
