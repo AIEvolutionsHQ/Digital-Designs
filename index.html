@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --video-width: 160px; /* adjustable size */
+    --video-width: 160px;
     --video-height: 160px;
   }
 
@@ -16,8 +16,6 @@
     margin: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     background-image: url('https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/a-realistic-desktop-computer-with-all-internal-hardwa.jpg');
     background-size: cover;
     background-position: center;
@@ -31,10 +29,12 @@
     align-items: center;
     padding: 15px 20px;
     position: relative;
+    background: transparent;
+    z-index: 1000;
   }
   .welcome-message {
     flex: 1;
-    text-align: center;
+    text-align: center; /* center the message */
   }
   .welcome-message h2 {
     font-family: 'Dancing Script', cursive;
@@ -72,7 +72,7 @@
     color: #fff;
   }
 
-  /* Adjustable fixed video box */
+  /* Fixed video box in bottom right */
   .fixed-video {
     position: fixed;
     bottom: 20px;
@@ -93,39 +93,41 @@
   /* Main layout styles */
   .container {
     display: flex;
-    flex: 1;
   }
   aside {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px;
   }
+  /* Make the "Categories" title black and move it up about an inch */
   .category-title {
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
-    color: #fff;
-    text-align: center;
+    color: #000;
+    text-align: left;
     font-size: 1.3em;
     margin-bottom: 8px;
+    margin-top: -24px; /* optional, if you want to move it up further */
   }
-  .list-box {
-    display: inline-block;
-  }
+  /* Remove bullets from list and left align items */
   .categories-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
+  /* List items on separate lines, left aligned */
   .categories-nav li {
     margin: 6px 0;
   }
+  /* Style links as block for full width and left alignment */
   .categories-nav a {
-    color: #fff;
+    color: #000; /* black text */
     text-decoration: none;
     font-family: 'Dancing Script', cursive;
     font-size: 1em;
     font-weight: 600;
+    display: block;
   }
   main {
     flex: 1;
@@ -161,28 +163,30 @@
   </div>
 </div>
 
-<!-- Main layout -->
-<div class="container">
-  <aside>
-    <div class="category-title">Categories</div>
-    <div class="list-box">
-      <nav class="categories-nav" aria-label="Categories list">
-        <ul>
-          <li><a href="#">Digital Paintings</a></li>
-          <li><a href="#">Abstract Art</a></li>
-          <li><a href="#">Illustrations</a></li>
-          <li><a href="#">AI Images</a></li>
-          <li><a href="#">AI Videos</a></li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
-  <main>
-    <!-- Placeholder for main content -->
-  </main>
+<!-- Main content with padding to prevent overlap -->
+<div style="padding-top: 80px;">
+  <div class="container">
+    <aside>
+      <div class="category-title">Categories</div>
+      <div class="list-box">
+        <nav class="categories-nav" aria-label="Categories list">
+          <ul>
+            <li><a href="#">Digital Paintings</a></li>
+            <li><a href="#">Abstract Art</a></li>
+            <li><a href="#">Illustrations</a></li>
+            <li><a href="#">AI Images</a></li>
+            <li><a href="#">AI Videos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <main>
+      <!-- Placeholder for main content -->
+    </main>
+  </div>
 </div>
 
-<!-- Adjustable fixed video box -->
+<!-- Fixed video box -->
 <div class="fixed-video" style="--video-width: 160px; --video-height: 160px;">
   <video autoplay muted loop controls>
     <source src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/Eve%20AWS%20Cert%20Intro.mp4" type="video/mp4" />
