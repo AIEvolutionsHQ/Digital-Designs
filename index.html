@@ -25,13 +25,13 @@
     justify-content: space-between; /* space between left and right */
     align-items: center;
     padding: 15px 20px;
-    position: relative; /* for relative positioning if needed */
+    position: relative; /* for positioning the video box inside if needed */
   }
   
   /* Welcome message centered across the top */
   .welcome-message {
-    flex: 1;
-    text-align: center;
+    flex: 1; /* take full width */
+    text-align: center; /* center text horizontally */
   }
 
   .welcome-message h2 {
@@ -72,18 +72,18 @@
     color: #fff;
   }
 
-  /* Fixed small video box at bottom right */
+  /* Fixed large small video in bottom right corner */
   .fixed-video {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 160px;
-    height: 90px;
+    width: 320px; /* doubled from 160px */
+    height: 180px; /* doubled from 90px */
     border: 2px solid #fff;
     border-radius: 5px;
     overflow: hidden;
     background: #000;
-    z-index: 999; /* ensure it stays on top */
+    z-index: 999; /* stay on top */
   }
   .fixed-video video {
     width: 100%;
@@ -156,7 +156,7 @@
 </head>
 <body>
 
-<!-- Top section: welcome message, login/create, and optional other elements -->
+<!-- Top section: welcome message, login/create, and small video in bottom right -->
 <div class="top-section">
   <div class="welcome-message">
     <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
@@ -188,7 +188,7 @@
   </main>
 </div>
 
-<!-- Fixed small video in bottom right corner -->
+<!-- Fixed large small video in bottom right corner -->
 <div class="fixed-video">
   <video autoplay muted loop>
     <source src="your-video-file.mp4" type="video/mp4" />
