@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Centered Title with Left Image and Font</title>
+<title>Large Translucent Image in Top Banner</title>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
@@ -18,7 +18,7 @@
     background-attachment: fixed;
   }
 
-  /* Top bar with centered title, image on left, links on right */
+  /* Top bar with larger, translucent image */
   .top-section {
     position: fixed;
     top: 0;
@@ -33,18 +33,19 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
-  /* Left section: image */
+  /* Left section: larger translucent image */
   .top-left {
     display: flex;
     align-items: center;
   }
 
   .top-left img {
-    height: 40px;
-    /* no margin, at the very left edge (with padding) */
+    height: 80px; /* larger height */
+    opacity: 0.5; /* translucent */
+    margin: 0; /* no margin to stick to the edge */
   }
 
-  /* Centered title container with font style applied */
+  /* Centered title container */
   .title-container {
     position: absolute;
     top: 0;
@@ -56,14 +57,14 @@
     justify-content: center;
   }
 
-  /* Title text styling */
+  /* Title style */
   .title-container h2 {
     margin: 0;
     font-family: 'Dancing Script', cursive;
     font-size: 1.2em;
   }
 
-  /* Sign-in links on the right */
+  /* Sign-in links on right */
   .sign-in-container {
     display: flex;
     align-items: center;
@@ -136,15 +137,15 @@
 
 <!-- Top bar -->
 <div class="top-section">
-  <!-- Left: logo/image -->
+  <!-- Larger translucent image on the left -->
   <div class="top-left">
     <img src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/ComfyUI_00038_.png" alt="ComfyUI Logo" />
   </div>
-  <!-- Center: title -->
+  <!-- Centered title -->
   <div class="title-container">
     <h2>Welcome to Ai Evolutions HQ</h2>
   </div>
-  <!-- Right: sign-in links -->
+  <!-- Sign-in links -->
   <div class="sign-in-container">
     <a href="#">Login</a>
     <a href="#">Create Account</a>
