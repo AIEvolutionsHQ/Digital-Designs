@@ -1,6 +1,3 @@
-Certainly! Here's the complete, corrected HTML code with the semi-transparent background for the `.sidebar-title`:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,51 +8,84 @@ Certainly! Here's the complete, corrected HTML code with the semi-transparent ba
   body {
     margin: 0;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-image: url('https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/a-realistic-desktop-computer-with-all-internal-hardwa.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  /* Sidebar title with semi-transparent background */
-  .sidebar-title {
-    background-color: rgba(255, 255, 255, 0.3); /* semi-transparent white */
+  /* Header styling */
+  header {
+    display: flex;
+    justify-content: flex-end; /* right aligned */
+    padding: 10px 20px;
+    background-color: rgba(240, 240, 240, 0.8);
+    z-index: 2;
+  }
+
+  /* Container to hold sidebar and main content */
+  .container {
+    display: flex;
+    flex: 1;
+    min-height: 0; /* for flex layout */
+  }
+
+  /* Sidebar styles */
+  aside {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 10px;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Title bar at the top of sidebar */
+  .title-bar {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 4px;
     font-weight: bold;
-    display: inline-block;
+    text-align: center;
     margin-bottom: 10px;
   }
 
-  /* Header: Login on the right */
-  header {
-    display: flex;
-    justify-content: flex-end; /* aligns to right */
-    padding: 10px 20px;
-    background-color: #f0f0f0;
+  /* Sidebar categories list */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  /* Main content area */
-  main {
+  nav li {
+    margin: 8px 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Main content styles */
+main {
     flex: 1;
     padding: 20px;
-    text-align: center; /* optional, for centering headings/content */
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
   }
 
-  /* Footer: centered links at bottom */
-  footer {
+  /* Footer styles */
+footer {
+    padding: 15px 20px;
+    background-color: rgba(240, 240, 240, 0.8);
     display: flex;
-    justify-content: center; /* options: 'center' or 'flex-start' for left */
-    padding: 20px;
-    background-color: #f0f0f0;
+    justify-content: center;
   }
 
-  /* Style for footer links */
   footer a {
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
     color: #333;
   }
@@ -67,22 +97,29 @@ Certainly! Here's the complete, corrected HTML code with the semi-transparent ba
   <a href="#">Login / Create Account</a>
 </header>
 
-<main>
-  <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
-  <div class="sidebar-title">Categories</div>
-  <nav>
-    <ul style="list-style: none; padding: 0;">
-      <li><a href="#">Digital Paintings</a></li>
-      <li><a href="#">Abstract Art</a></li>
-      <li><a href="#">Illustrations</a></li>
-      <li><a href="#">AI Images</a></li>
-      <li><a href="#">AI Videos</a></li>
-    </ul>
-  </nav>
-  <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
-</main>
+<div class="container">
+  <!-- Sidebar -->
+  <aside>
+    <div class="title-bar">Categories</div>
+    <nav>
+      <ul>
+        <li><a href="#">Digital Paintings</a></li>
+        <li><a href="#">Abstract Art</a></li>
+        <li><a href="#">Illustrations</a></li>
+        <li><a href="#">AI Images</a></li>
+        <li><a href="#">AI Videos</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-<!-- Centered footer -->
+  <!-- Main content -->
+  <main>
+    <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
+    <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+  </main>
+</div>
+
+<!-- Footer -->
 <footer>
   <a href="#">About Us</a>
   <a href="#">Contact Us</a>
@@ -91,11 +128,3 @@ Certainly! Here's the complete, corrected HTML code with the semi-transparent ba
 
 </body>
 </html>
-```
-
-### Summary:
-- The `.sidebar-title` now has a semi-transparent white background (`rgba(255, 255, 255, 0.3)`).
-- The overall structure is intact.
-- You can adjust the `rgba` alpha value to make the background more or less transparent as needed.
-
-Would you like me to help you with anything else?
