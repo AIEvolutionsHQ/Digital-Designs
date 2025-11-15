@@ -17,13 +17,28 @@
     background-repeat: no-repeat;
   }
 
-  /* Header styling */
-  header {
+  /* Top section containing welcome message and login link */
+  .top-section {
     display: flex;
-    justify-content: flex-end; /* right aligned */
-    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
     background-color: rgba(240, 240, 240, 0.8);
     z-index: 2;
+  }
+
+  /* Welcome message styles */
+  .welcome-message {
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  /* Sign in / sign up link styles */
+  .signin-link {
+    font-size: 1em;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
   }
 
   /* Container to hold sidebar and main content */
@@ -93,10 +108,16 @@ footer {
 </head>
 <body>
 
-<header>
-  <a href="#">Login / Create Account</a>
-</header>
+<!-- Top section with welcome message and login link -->
+<div class="top-section">
+  <div class="welcome-message">
+    <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
+    <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+  </div>
+  <a class="signin-link" href="#">Login / Create Account</a>
+</div>
 
+<!-- Main container with sidebar and content -->
 <div class="container">
   <!-- Sidebar -->
   <aside>
@@ -114,8 +135,7 @@ footer {
 
   <!-- Main content -->
   <main>
-    <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
-    <p>Explore our extensive collection of digital art pieces created by talented artists using AI tools.</p>
+    <p>This is the main content area where featured images or other info can go.</p>
   </main>
 </div>
 
