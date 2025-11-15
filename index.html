@@ -29,8 +29,19 @@
 
   /* Welcome message styles */
   .welcome-message {
-    font-size: 1.2em;
+    max-width: 70%;
+  }
+
+  .welcome-message h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.3em;
     color: #333;
+  }
+
+  .welcome-message p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #555;
   }
 
   /* Sign in / sign up link styles */
@@ -45,7 +56,7 @@
   .container {
     display: flex;
     flex: 1;
-    min-height: 0; /* for flex layout */
+    min-height: 0;
   }
 
   /* Sidebar styles */
@@ -57,14 +68,15 @@
     flex-direction: column;
   }
 
-  /* Title bar at the top of sidebar */
+  /* Shorter title bar at the top of sidebar */
   .title-bar {
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 10px;
-    border-radius: 4px;
+    padding: 6px 10px;
+    border-radius: 3px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 1em;
+    margin-bottom: 8px;
   }
 
   /* Sidebar categories list */
@@ -89,6 +101,10 @@ main {
     padding: 20px;
     background-color: rgba(255,255,255,0.2);
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
   }
 
   /* Footer styles */
@@ -135,7 +151,7 @@ footer {
 
   <!-- Main content -->
   <main>
-    <p>This is the main content area where featured images or other info can go.</p>
+    <!-- Content area left blank for your content -->
   </main>
 </div>
 
