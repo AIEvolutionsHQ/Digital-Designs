@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Full Layout with Larger Certification Font</title>
+<title>Layout with Fixed Top Bar and Sidebar</title>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
@@ -18,85 +18,97 @@
     background-attachment: fixed;
   }
 
-  /* Top bar styling omitted for brevity, same as previous */
+  /* Fixed Top Bar */
+  .top-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px; /* set fixed height */
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px;
+    background:#fff;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .welcome-message h2 {
+    margin:0; font-family:'Dancing Script', cursive; font-size:1.2em;
+  }
+  .sign-in-container a {
+    margin-left:10px; padding:8px 16px; border-radius:20px; border:2px solid #0066cc;
+    text-decoration:none; font-family:'Dancing Script', cursive; font-weight:bold; color:#000;
+  }
 
-  /* Fixed video box at bottom right */
+  /* Fixed video at bottom right */
   .video-box {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 200px;
-    height: 150px;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
+    bottom: 80px; right: 20px;
+    width: 200px; height: 150px;
+    background: #000; border-radius: 8px; overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     z-index: 10000;
   }
   .video-box video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; height: 100%; object-fit: cover;
   }
 
-  /* White certification box, increase font size here */
-  .cert-box {
+  /* Sidebar fixed just below top bar */
+  .sidebar {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255,255,255,0.9);
-    border: 2px solid #333;
-    border-radius: 8px;
-    width: calc(312.5px * 0.85); /* approx 292px previous size */
-    max-height: 250px;
-    padding: 10px;
-    font-family: 'Dancing Script', cursive;
-    font-size: calc(0.45em * 0.85 * 1.5); /* Increase font size by 50% */
+    top: 60px; /* start below top bar */
+    left: 0;
+    width: 180px;
+    height: calc(100% - 60px); /* fill remaining height */
+    background-color: #fff; border-right: 2px solid #333;
+    padding: 10px; box-sizing: border-box;
     overflow-y: auto;
-  }
-  .cert-box h3 {
-    margin-top: 0;
-    font-size: calc(0.45em * 0.85 * 1.5);
+    font-family: 'Dancing Script', cursive;
+    z-index: 998;
   }
 
-  /* Blue categories box, unchanged */
-  .bottom-left-fit-box {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ADD8E6;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    font-family: 'Dancing Script', cursive;
-    max-width: 70%;
+  /* Sidebar header */
+  .sidebar h2 {
+    margin-top: 0; margin-bottom: 10px; font-size: 1.2em; text-align: center;
   }
-  .bottom-left-fit-box h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+
+  /* Sidebar list styles */
+  .sidebar ul {
+    list-style: none; padding: 0; margin: 0;
   }
-  .bottom-left-fit-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .sidebar li {
+    margin: 8px 0;
   }
-  .bottom-left-fit-box li {
-    margin: 6px 0;
+  .sidebar a {
+    display: block; padding: 6px; border-radius: 4px; border: 1px solid #0066cc;
+    text-decoration: none; font-family: 'Dancing Script', cursive; font-weight: bold;
+    color: #000; background-color: #fff; font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
   }
-  .bottom-left-fit-box a {
-    text-decoration: none;
-    color: #000;
-    font-size: calc(1.1em * 1.25);
+  .sidebar a:hover {
+    background-color: #0066cc; color: #fff;
+  }
+
+  /* Main content with margin-top to account for fixed top bar and sidebar */
+  .content-area {
+    margin-left: 200px; /* space for sidebar */
+    margin-top: 60px; /* space for fixed top bar */
+    padding: 20px;
   }
 </style>
 </head>
 <body>
 
-<!-- Top bar omitted for brevity, same as previous -->
+<!-- Fixed Top Bar -->
+<div class="top-section">
+  <div class="welcome-message">
+    <h2>Welcome to Ai Evolutions HQ</h2>
+  </div>
+  <div class="sign-in-container">
+    <a href="#">Login</a>
+    <a href="#">Create Account</a>
+  </div>
+</div>
 
-<!-- Fixed video box -->
+<!-- Fixed video at bottom right -->
 <div class="video-box">
   <video autoplay muted loop controls>
     <source src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/Eve%20AWS%20Cert%20Intro.mp4" type="video/mp4" />
@@ -104,19 +116,15 @@
   </video>
 </div>
 
-<!-- Fixed certification box with larger font -->
-<div class="cert-box">
-  <h3>Certifications:</h3>
+<!-- Sidebar below top bar -->
+<div class="sidebar">
+  <h2>Certifications</h2>
   <ul>
     <li><a href="#">AWS Certified Cloud Practitioner</a></li>
     <li><a href="#">CCP</a></li>
     <li><a href="#">6 Week Study Guide</a></li>
     <li><a href="#">Week 1: Introduction to AWS Cloud and Exam Overview</a></li>
   </ul>
-</div>
-
-<!-- Fixed categories box -->
-<div class="bottom-left-fit-box">
   <h2>Categories</h2>
   <ul>
     <li><a href="#">Digital Paintings</a></li>
@@ -125,6 +133,11 @@
     <li><a href="#">AI Images</a></li>
     <li><a href="#">AI Videos</a></li>
   </ul>
+</div>
+
+<!-- Main Content -->
+<div class="content-area">
+  <p style="margin-top:1500px;">End of content</p>
 </div>
 
 </body>
