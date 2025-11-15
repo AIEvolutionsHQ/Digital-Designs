@@ -7,6 +7,11 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
+  :root {
+    --video-width: 160px; /* adjustable size */
+    --video-height: 160px;
+  }
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -22,18 +27,15 @@
   /* Top section styles */
   .top-section {
     display: flex;
-    justify-content: space-between; /* space between left and right */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    position: relative; /* for positioning the video box inside if needed */
+    position: relative;
   }
-  
-  /* Welcome message centered across the top */
   .welcome-message {
-    flex: 1; /* take full width */
-    text-align: center; /* center text horizontally */
+    flex: 1;
+    text-align: center;
   }
-
   .welcome-message h2 {
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
@@ -43,14 +45,12 @@
     font-weight: 700;
   }
 
-  /* Container for sign-in links on the right */
+  /* Sign-in links */
   .sign-in-container {
     display: flex;
     gap: 10px;
     align-items: center;
   }
-
-  /* Style for login/create links */
   .signin-link {
     font-family: 'Dancing Script', cursive;
     font-size: 1em;
@@ -72,31 +72,29 @@
     color: #fff;
   }
 
-  /* Fixed large small video in bottom right corner */
+  /* Adjustable fixed video box */
   .fixed-video {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 320px; /* doubled from 160px */
-    height: 180px; /* doubled from 90px */
+    width: var(--video-width);
+    height: var(--video-height);
     border: 2px solid #fff;
     border-radius: 5px;
     overflow: hidden;
     background: #000;
-    z-index: 999; /* stay on top */
+    z-index: 999;
   }
   .fixed-video video {
     width: 100%;
     height: 100%;
   }
 
-  /* Main container styles */
+  /* Main layout styles */
   .container {
     display: flex;
     flex: 1;
   }
-
-  /* Sidebar styles */
   aside {
     display: flex;
     flex-direction: column;
@@ -129,8 +127,6 @@
     font-size: 1em;
     font-weight: 600;
   }
-
-  /* Main content styling */
   main {
     flex: 1;
     padding: 20px;
@@ -140,8 +136,6 @@
     min-height: 300px;
     color: #fff;
   }
-
-  /* Footer styles */
   footer {
     padding: 15px 20px;
     display: flex;
@@ -156,7 +150,7 @@
 </head>
 <body>
 
-<!-- Top section: welcome message, login/create, and small video in bottom right -->
+<!-- Top section -->
 <div class="top-section">
   <div class="welcome-message">
     <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
@@ -167,7 +161,7 @@
   </div>
 </div>
 
-<!-- Main layout with sidebar -->
+<!-- Main layout -->
 <div class="container">
   <aside>
     <div class="category-title">Categories</div>
@@ -188,10 +182,10 @@
   </main>
 </div>
 
-<!-- Fixed large small video in bottom right corner -->
-<div class="fixed-video">
-  <video autoplay muted loop>
-    <source src="your-video-file.mp4" type="video/mp4" />
+<!-- Adjustable fixed video box -->
+<div class="fixed-video" style="--video-width: 160px; --video-height: 160px;">
+  <video autoplay muted loop controls>
+    <source src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/Eve%20AWS%20Cert%20Intro.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>
