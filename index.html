@@ -12,9 +12,19 @@
     flex-direction: column;
     min-height: 100vh;
     background-image: url('https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/a-realistic-desktop-computer-with-all-internal-hardwa.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Sidebar title with semi-transparent background */
+  .sidebar-title {
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
   }
 
   /* Header: Login on the right */
@@ -40,12 +50,6 @@
     background-color: #f0f0f0;
   }
 
-  /* To place footer items at bottom left instead, comment above and uncomment below: */
-  /* footer {
-    justify-content: flex-start;
-    padding: 20px;
-  } */
-
   /* Style for footer links */
   footer a {
     margin: 0 10px;
@@ -62,6 +66,7 @@
 
 <main>
   <h1>Welcome to AI Evolutions HQ Digital Art Store!</h1>
+  <div class="sidebar-title">Categories</div>
   <nav>
     <ul style="list-style: none; padding: 0;">
       <li><a href="#">Digital Paintings</a></li>
@@ -80,14 +85,6 @@
   <a href="#">Contact Us</a>
   <a href="#">Help</a>
 </footer>
-
-<!-- To place footer at bottom left, swap the footer CSS:
-<footer style="justify-content: flex-start;">
-  <a href="#">About Us</a>
-  <a href="#">Contact Us</a>
-  <a href="#">Help</a>
-</footer>
--->
 
 </body>
 </html>
