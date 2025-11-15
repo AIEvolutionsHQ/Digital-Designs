@@ -3,203 +3,173 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Digital Art Store</title>
+<title>Full Layout with Fixed Elements</title>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --video-width: 160px;
-    --video-height: 160px;
-  }
-
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    min-height: 100vh;
+    height: 200vh;
     background-image: url('https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/a-realistic-desktop-computer-with-all-internal-hardwa.jpg');
-    background-size: cover;
+    background-size: cover; /* Cover entire screen */
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Static background */
   }
 
-  /* Top section styles */
+  /* Top bar for context */
   .top-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    position: relative;
-    background: transparent;
-    z-index: 1000;
-  }
-  .welcome-message {
-    flex: 1;
-    text-align: center; /* center the message */
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
   .welcome-message h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    color: #DAA520;
     margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    font-weight: 700;
   }
-
-  /* Sign-in links */
-  .sign-in-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  .signin-link {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1em;
-    font-weight: 700;
-    text-decoration: none;
+  .sign-in-container a {
+    margin-left: 10px;
     padding: 8px 16px;
+    border-radius: 20px;
     border: 2px solid #0066cc;
-    border-radius: 30px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .login-link {
-    color: #fff;
-  }
-  .create-account-link {
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
     color: #000;
   }
-  .signin-link:hover {
+  .sign-in-container a:hover {
     background-color: #0066cc;
     color: #fff;
   }
 
-  /* Fixed video box in bottom right */
-  .fixed-video {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: var(--video-width);
-    height: var(--video-height);
-    border: 2px solid #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    background: #000;
-    z-index: 999;
-  }
-  .fixed-video video {
-    width: 100%;
-    height: 100%;
+  /* Main content placeholder for scrolling */
+  .content-area {
+    padding: 20px;
   }
 
-  /* Main layout styles */
-  .container {
-    display: flex;
+  /* Video box fixed at bottom right */
+  .video-box {
+    position: fixed;
+    bottom: 80px; /* above certification box */
+    right: 20px;
+    width: 200px;
+    height: 150px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 10000;
   }
-  aside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Certification box fixed at bottom center */
+  .cert-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255,0.9);
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 250px;
+    max-height: 250px;
     padding: 10px;
-  }
-  /* Make the "Categories" title black and move it up about an inch */
-  .category-title {
     font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    color: #000;
-    text-align: left;
-    font-size: 1.3em;
-    margin-bottom: 8px;
-    margin-top: -24px; /* optional, if you want to move it up further */
+    font-size: 0.45em;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
   }
-  /* Remove bullets from list and left align items */
-  .categories-nav ul {
+  .cert-box h3 {
+    margin-top: 0;
+    font-size: 0.45em;
+  }
+
+  /* Bottom left box that fits words */
+  .bottom-left-fit-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ADD8E6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family: 'Dancing Script', cursive;
+    max-width: 90%;
+  }
+  .bottom-left-fit-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .bottom-left-fit-box ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  /* List items on separate lines, left aligned */
-  .categories-nav li {
+  .bottom-left-fit-box li {
     margin: 6px 0;
   }
-  /* Style links as block for full width and left alignment */
-  .categories-nav a {
-    color: #000; /* black text */
+  .bottom-left-fit-box a {
     text-decoration: none;
-    font-family: 'Dancing Script', cursive;
-    font-size: 1em;
-    font-weight: 600;
-    display: block;
-  }
-  main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    color: #fff;
-  }
-  footer {
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-  }
-  footer a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
+    color: #000;
+    font-size: 1.1em;
   }
 </style>
 </head>
 <body>
 
-<!-- Top section -->
+<!-- Top bar -->
 <div class="top-section">
   <div class="welcome-message">
-    <h2>Welcome to AI Evolutions HQ Digital Art Store!</h2>
+    <h2>Welcome to Ai Evolutions HQe</h2>
   </div>
   <div class="sign-in-container">
-    <a class="signin-link login-link" href="#">Login</a>
-    <a class="signin-link create-account-link" href="#">Create Account</a>
+    <a href="#">Login</a>
+    <a href="#">Create Account</a>
   </div>
 </div>
 
-<!-- Main content with padding to prevent overlap -->
-<div style="padding-top: 80px;">
-  <div class="container">
-    <aside>
-      <div class="category-title">Categories</div>
-      <div class="list-box">
-        <nav class="categories-nav" aria-label="Categories list">
-          <ul>
-            <li><a href="#">Digital Paintings</a></li>
-            <li><a href="#">Abstract Art</a></li>
-            <li><a href="#">Illustrations</a></li>
-            <li><a href="#">AI Images</a></li>
-            <li><a href="#">AI Videos</a></li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
-    <main>
-      <!-- Placeholder for main content -->
-    </main>
-  </div>
-</div>
-
-<!-- Fixed video box -->
-<div class="fixed-video" style="--video-width: 160px; --video-height: 160px;">
+<!-- Fixed video box at bottom right -->
+<div class="video-box">
   <video autoplay muted loop controls>
     <source src="https://raw.githubusercontent.com/AIEvolutionsHQ/Digital-Designs/main/Eve%20AWS%20Cert%20Intro.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>
 
-<!-- Footer -->
-<footer>
-  <a href="#">About Us</a>
-  <a href="#">Contact Us</a>
-  <a href="#">Help</a>
-</footer>
+<!-- Fixed certification box at bottom center -->
+<div class="cert-box">
+  <h3>Certifications:</h3>
+  <ul>
+    <li><a href="#">AWS Certified Cloud Practitioner</a></li>
+    <li><a href="#">CCP</a></li>
+    <li><a href="#">6 Week Study Guide</a></li>
+    <li><a href="#">Week 1: Introduction to AWS Cloud and Exam Overview</a></li>
+  </ul>
+</div>
+
+<!-- Fixed bottom left box fitting the words -->
+<div class="bottom-left-fit-box">
+  <h2>Categories</h2>
+  <ul>
+    <li><a href="#">Digital Paintings</a></li>
+    <li><a href="#">Abstract Art</a></li>
+    <li><a href="#">Illustrations</a></li>
+    <li><a href="#">AI Images</a></li>
+    <li><a href="#">AI Videos</a></li>
+  </ul>
+</div>
 
 </body>
 </html>
